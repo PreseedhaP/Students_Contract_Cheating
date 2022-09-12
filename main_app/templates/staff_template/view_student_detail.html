@@ -1,0 +1,277 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{page_title}}{% endblock page_title %}
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+<!--        <div class="row">-->
+<!--            <div class="col-lg-6 col-6">-->
+<!--                &lt;!&ndash; small box &ndash;&gt;-->
+<!--                <div class="small-box bg-info">-->
+<!--                    <div class="inner">-->
+<!--                        <p>Students Details</p>-->
+<!--                    </div>-->
+<!--                    -->
+<!--                    <div class="icon">-->
+<!--                         <i class="ion ion-person"></i>-->
+<!--                    </div>-->
+<!--                    <a href="{% url 'manage_student' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; ./col &ndash;&gt;-->
+<!--            <div class="col-lg-6 col-6">-->
+<!--                &lt;!&ndash; small box &ndash;&gt;-->
+<!--                <div class="small-box bg-success">-->
+<!--                    <div class="inner">-->
+
+
+<!--                        <p>Total Lecturer</p>-->
+<!--                    </div>-->
+<!--                    <div class="icon">-->
+<!--                        <i class="ion ion-stats-bars"></i>-->
+<!--                    </div>-->
+<!--                    <a href="{% url 'manage_staff' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; ./col &ndash;&gt;-->
+<!--        <div>-->
+<!--        <div class="row">-->
+<!--            <div class="col-lg-6 col-6">-->
+<!--                &lt;!&ndash; small box &ndash;&gt;-->
+<!--                <div class="small-box bg-warning">-->
+<!--                    <div class="inner">-->
+<!--                        <h3>{{total_course}}</h3>-->
+
+<!--                        <p>Total Course</p>-->
+<!--                    </div>-->
+<!--                    <div class="icon">-->
+<!--                        <i class="ion ion-person"></i>-->
+<!--                    </div>-->
+<!--                    <a href="{% url 'manage_course' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; ./col &ndash;&gt;-->
+<!--            <div class="col-lg-6 col-6">-->
+<!--                &lt;!&ndash; small box &ndash;&gt;-->
+<!--                <div class="small-box bg-danger">-->
+<!--                    <div class="inner">-->
+<!--                        <h3>{{total_subject}}</h3>-->
+
+<!--                        <p>Total Module</p>-->
+<!--                    </div>-->
+<!--                    <div class="icon">-->
+<!--                        <i class="ion ion-pie-graph"></i>-->
+<!--                    </div>-->
+<!--                    <a href="{% url 'manage_subject' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; ./col &ndash;&gt;-->
+<!--        </div>-->
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+            <div class="col-md-6">
+                <!-- LINE CHART -->
+                <div class="card card-secondary">
+                  <div class="card-header">
+                    <h3 class="card-title">Student Details</h3>
+
+<!--                    <div class="card-tools">-->
+<!--                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>-->
+<!--                      </button>-->
+<!--                      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>-->
+<!--                    </div>-->
+                  </div>
+                  <div class="card-body" style="min-height: 300px; height: 300px; max-height: 300px; max-width: 100%;">
+                    <div class="chart">
+                        <p><span>Name :</span><span> {{student.admin.last_name}}, {{student.admin.first_name}}</span></p>
+                        <p><span>Student Id :</span>{{student.number}}</p>
+                        <p><span>Course :</span>{{student.course}}</p>
+
+                    </div>
+
+                  </div></div>
+                  <!-- /.card-body -->
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-secondary">
+              <div class="card-header">
+                <h3 class="card-title">Detected Suspicious</h3>
+
+              </div>
+              <div class="card-body" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;">
+                <div class="chart" >
+
+
+<!--                  <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>-->
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+                </div>
+            <!-- right col -->
+        </div>
+
+         <div class="row">
+            <div class="col-md-6">
+                <!-- LINE CHART -->
+                <div class="card card-secondary">
+                  <div class="card-header">
+                    <h3 class="card-title">
+                        Key Descriptions
+                    </h3>
+
+<!--                    <div class="card-tools">-->
+<!--                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>-->
+<!--                      </button>-->
+<!--                      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>-->
+<!--                    </div>-->
+                  </div>
+                  <div class="card-body" style="min-height: 200px; height: 200px; max-height: 200px; max-width: 100%;">
+                    <div class="chart">
+
+                    </div>
+                  </div></div>
+                  <!-- /.card-body -->
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-secondary">
+              <div class="card-header">
+                <h3 class="card-title">Evidence</h3>
+
+<!--                <div class="card-tools">-->
+<!--                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>-->
+<!--                  </button>-->
+<!--                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>-->
+<!--                </div>-->
+              </div>
+              <div class="card-body" style="min-height: 350px; height: 350px; max-height: 350px; max-width: 100%;">
+                <div class="chart" >
+                     <table style=" font-family: arial, sans-serif;border-collapse: collapse;width: 100%;">
+                      <tr>
+                        <th style="border: 1px solid #dddddd;text-align: left;padding: 8px;">No</th>
+                        <th style="border: 1px solid #dddddd;text-align: left;padding: 8px;">File Name</th>
+                        <th style="border: 1px solid #dddddd;text-align: left;padding: 8px;">Category</th>
+                        <th style="border: 1px solid #dddddd;text-align: left;padding: 8px;">Priority</th>
+<!--                        <th style="border: 1px solid #dddddd;text-align: left;padding: 8px;">Added By</th>-->
+                        <th style="border: 1px solid #dddddd;text-align: left;padding: 8px;"></th>
+                      </tr>
+                         {% for evidence in evidences %}
+                      <tr>
+                        <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">{{ forloop.counter }}</td>
+                        <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">{{evidence.file_name}}</td>
+                        <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">{{evidence.priority}}</td>
+                        <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">{{evidence.category}}</td>
+                        <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;"><a href="{{evidence.evidence_file}}">link</a>
+                            </td>
+<!--                        <td style="border: 1px solid #dddddd;text-align: left;padding: 8px;">Test</td>-->
+                      </tr>
+                         {% endfor %}
+                    </table>
+
+
+
+                </div>
+                  <div>
+
+                           {% url 'add_evidence' as add_evidence %}
+                            <a href="{{add_evidence}}">
+                                <button type="button" id="add_evidence" class="btn btn-primary btn-block" style="margin-top:70px">Add Evidence</button>
+                            </a>
+                      </button>
+                  </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+                </div>
+            <!-- right col -->
+        </div>
+
+    </div><!-- /.container-fluid -->
+</section>
+{% endblock content %}
+
+{% block custom_js %}
+  <script>
+      $(document).ready(function(){
+
+<!--        $("#add_evidence").click(function(){-->
+<!--            console.log(""dddeeeed)-->
+<!--            $.ajax({-->
+<!--                url: "{% url 'add_evidence' %}",-->
+<!--                type: 'GET'-->
+<!--            })-->
+<!--        });-->
+
+        var donutData        = {
+            labels: ['Students', 'Staff'],
+            datasets: [
+              {
+                data:[{{total_students}}, {{total_staff}}],
+                backgroundColor : ['#00a65a', '#f39c12',],
+              }
+            ]
+          }
+        var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+        var pieData        = donutData;
+        var pieOptions     = {
+          maintainAspectRatio : false,
+          responsive : true,
+        }
+        //Create pie or douhnut chart
+        // You can switch between pie and douhnut using the method below.
+        var pieChart = new Chart(pieChartCanvas, {
+          type: 'pie',
+          data: pieData,
+          options: pieOptions
+        });
+
+        var subject_list = {{ subject_list|safe|escape }};
+        var attendance_list = {{ attendance_list }};
+
+            var barChartData = {
+      labels  : subject_list,
+      datasets: [
+      {
+        label               : 'Attendance Per Subject',
+        backgroundColor     : '#6c757d',
+        borderColor         : 'rgba(60,141,188,0.8)',
+        pointRadius          : false,
+        pointColor          : '#3b8bba',
+        pointStrokeColor    : 'rgba(60,141,188,1)',
+        pointHighlightFill  : '#fff',
+        pointHighlightStroke: 'rgba(60,141,188,1)',
+        data                : attendance_list
+      },
+
+      ]
+    }
+        var barChartCanvas = $('#barChart').get(0).getContext('2d')
+        var temp0 = barChartData.datasets[0]
+        //var temp1 = areaChartData.datasets[1]
+        barChartData.datasets[0] = temp0
+       // barChartData.datasets[1] = temp0
+
+    var stackedBarChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      scales: {
+        xAxes: [{
+          stacked: true,
+        }],
+        yAxes: [{
+          stacked: true
+        }]
+      }
+    }
+
+        var barChart = new Chart(barChartCanvas, {
+          type: 'bar',
+          data: barChartData,
+          options: stackedBarChartOptions
+        })
+      })
+  </script>
+{% endblock custom_js %}
